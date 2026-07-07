@@ -154,7 +154,7 @@ Welcome the student and continue the teaching session according to the SYSTEM_PR
 Do NOT ask the student to choose Beginner, Intermediate or Advanced because the application has already collected that information.
 """
 
-        try:
+         try:
 
             response = st.session_state.chat.send_message(first_prompt)
 
@@ -169,7 +169,7 @@ Do NOT ask the student to choose Beginner, Intermediate or Advanced because the 
 
             st.rerun()
 
-        except Exception as e:
+          except Exception as e:
 
             st.error(
                 "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
@@ -195,7 +195,7 @@ if user_message:
     with st.chat_message("user"):
         st.write(user_message)
 
-     try:
+try:
     response = st.session_state.chat.send_message(user_message)
 
     st.session_state.messages.append(
