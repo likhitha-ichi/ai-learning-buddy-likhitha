@@ -154,7 +154,7 @@ Welcome the student and continue the teaching session according to the SYSTEM_PR
 Do NOT ask the student to choose Beginner, Intermediate or Advanced because the application has already collected that information.
 """
 
-         try:
+        try:
 
             response = st.session_state.chat.send_message(first_prompt)
 
@@ -168,8 +168,8 @@ Do NOT ask the student to choose Beginner, Intermediate or Advanced because the 
             st.session_state.started = True
 
             st.rerun()
-
-          except Exception as e:
+        
+        except Exception as e:
 
             st.error(
                 "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
@@ -178,6 +178,10 @@ Do NOT ask the student to choose Beginner, Intermediate or Advanced because the 
             st.caption(f"Error: {e}")
 
 # ------------------------------
+# Chat Input
+# ------------------------------
+
+ # ------------------------------
 # Chat Input
 # ------------------------------
 
@@ -195,22 +199,24 @@ if user_message:
     with st.chat_message("user"):
         st.write(user_message)
 
-try:
-    response = st.session_state.chat.send_message(user_message)
+    try:
 
-    st.session_state.messages.append(
-        {
-            "role": "assistant",
-            "content": response.text
-        }
-    )
+        response = st.session_state.chat.send_message(user_message)
 
-    with st.chat_message("assistant"):
-        st.write(response.text)
+        st.session_state.messages.append(
+            {
+                "role": "assistant",
+                "content": response.text
+            }
+        )
 
-except Exception as e:
-    st.error(
-        "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
-    )
+        with st.chat_message("assistant"):
+            st.write(response.text)
 
-    st.caption(f"Error: {e}")
+    except Exception as e:
+
+        st.error(
+            "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
+        )
+
+        st.caption(f"Error: {e}")
