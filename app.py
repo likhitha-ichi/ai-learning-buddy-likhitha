@@ -133,9 +133,18 @@ for message in st.session_state.messages:
         st.write(message["content"])
 
 # First assistant message
-if "started" not in st.session_state:
+# ------------------------------
+# Start Learning Button
+# ------------------------------
 
-    first_prompt = f"""
+if "started" not in st.session_state:
+    st.session_state.started = False
+
+if not st.session_state.started:
+
+    if st.button("🚀 Start Learning"):
+
+        first_prompt = f"""
 The student's Machine Learning knowledge level is: {level}.
 
 Start from Step 1.
@@ -145,26 +154,28 @@ Welcome the student and continue the teaching session according to the SYSTEM_PR
 Do NOT ask the student to choose Beginner, Intermediate or Advanced because the application has already collected that information.
 """
 
-     try:
-    response = st.session_state.chat.send_message(first_prompt)
+        try:
 
-    st.session_state.messages.append(
-        {
-            "role": "assistant",
-            "content": response.text
-        }
-    )
+            response = st.session_state.chat.send_message(first_prompt)
 
-    st.session_state.started = True
+            st.session_state.messages.append(
+                {
+                    "role": "assistant",
+                    "content": response.text
+                }
+            )
 
-    with st.chat_message("assistant"):
-        st.write(response.text)
+            st.session_state.started = True
 
-except Exception:
-    st.error(
-        "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
-    )
-    st.stop()
+            st.rerun()
+
+        except Exception as e:
+
+            st.error(
+                "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
+            )
+
+            st.caption(f"Error: {e}")
 
 # ------------------------------
 # Chat Input
@@ -197,7 +208,9 @@ if user_message:
     with st.chat_message("assistant"):
         st.write(response.text)
 
-except Exception:
+except Exception as e:
     st.error(
         "⚠️ The AI service is temporarily unavailable or the free API limit has been reached. Please try again later."
     )
+
+    st.caption(f"Error: {e}")
