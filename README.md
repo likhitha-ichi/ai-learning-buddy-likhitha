@@ -42,3 +42,13 @@ https://ai-learning-buddy-likhitha-jtwffine3jwvxaw37xsycg.streamlit.app/
 
 Capstone Project  
 Infosys Springboard – Pragathi Cohort 8
+
+## 📈 Project Evolution
+
+This project was developed in two stages:
+
+### 🌱 Basic Prototype
+A simple AI Learning Buddy demonstrating the core functionalities using Streamlit and the Gemini API.
+
+### 🌟 Enhanced Version
+The final version includes an improved user interface, refined prompts, better user experience, and a polished design to create a more engaging learning platform for beginners.
