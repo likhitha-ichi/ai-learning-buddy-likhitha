@@ -2,7 +2,7 @@
 
 ## 📖 About the Project
 
-AI Learning Buddy – Likhitha is an interactive educational web application developed as part of the **Infosys Springboard Pragathi Cohort 8 Capstone Project**.
+AI Learning Buddy – Likhitha is an interactive educational web application developed as part of the **AI Empow(H)er Capstone Project**.
 
 The application helps beginners learn **Machine Learning** through AI-generated explanations, real-life examples, quizzes, and interactive question answering using Google's Gemini API.
 
@@ -20,11 +20,11 @@ The application helps beginners learn **Machine Learning** through AI-generated 
 
 ## 🛠️ Technologies Used
 
-- Python
-- Streamlit
-- Google Gemini API
-- GitHub
-- Streamlit Community Cloud
+Python
+Streamlit
+Google Gemini API
+Git
+Streamlit Community Cloud
 
 ---
 
@@ -36,12 +36,13 @@ https://ai-learning-buddy-likhitha-jtwffine3jwvxaw37xsycg.streamlit.app/
 
 ---
 
-## 👩‍💻 Developed By
+## 👩‍💻 Developer
 
 **Likhitha Chilumula**
 
+AI Empow(H)er
 Capstone Project  
-Infosys Springboard – Pragathi Cohort 8
+ 
 
 ## 📈 Project Evolution
 
